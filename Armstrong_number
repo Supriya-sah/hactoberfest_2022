@@ -1,0 +1,42 @@
+import java.util.*;
+public class Armstrong1 {
+	int num;
+	int count=0;
+	int rem;
+	int arm=1;
+	int temp;
+	int n;
+	int result=0;
+	public void output() {
+		while(num>0) {
+			num = num/10;
+			count=count+1;
+		}
+		while(temp>0) {
+			rem = temp % 10;
+			temp=temp/10;
+			arm=1;
+			for(int j = 1;j<=count;j++) {
+				arm=arm*rem;
+			}
+			result=result+arm;
+		}
+		if(result==n) {
+			System.out.println("It is a Armstrong Number");
+		}
+		else {
+			System.out.println("It is not a Armstrong Number");
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Armstrong1 a = new Armstrong1();
+		System.out.println("Enter a number:");
+		a.num=sc.nextInt();
+		a.temp=a.num;
+		a.n=a.num;
+		a.output();
+
+	}
+
+}
