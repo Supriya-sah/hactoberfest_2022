@@ -1,0 +1,32 @@
+import java.util.*;
+public class Palindrome {
+	int num;
+	int rem;
+	int rev=0;
+	int temp=num;
+	public void output() {
+		while(num>0) {
+			rem=num%10;
+			rev=(rev*10)+rem;
+			num=num/10;
+		}
+		if(temp==rev) {
+			System.out.println("It is a Palindrome");
+		}
+		else {
+			System.out.println("It is not a Palindrome");
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Palindrome p = new Palindrome();
+		System.out.println("Enter a Number:");
+		p.num = sc.nextInt();
+		p.temp = p.num;
+		System.out.println(p.num);
+		System.out.println(p.temp);
+		p.output();
+		System.out.println(p.rev);
+	}
+
+}
